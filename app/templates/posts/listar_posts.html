@@ -4,6 +4,11 @@
 <div class="columns">
     <div class="column is-offset-3 is-6">
 
+        <div class="is-flex is-justify-content-space-between is-align-items-center">
+            <h1 class="title">Lista de Posts</h1>
+            <a class="button is-success" href="{{ url_for('posts.add_post') }}">Agregar Post</a>
+        </div>
+
         <br><br>
         {% for post in posts %}
         <div class="card">
