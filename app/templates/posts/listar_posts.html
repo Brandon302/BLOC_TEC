@@ -22,6 +22,18 @@
                 <div class="content">
                     {{ post.content }}
                     <br><br>
+                    <div>
+                        <!-- Botón para editar -->
+                        <a href="{{ url_for('posts.update_post', id=post.id) }}" class="button is-small is-link is-outlined">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <!-- Formulario para eliminar con método POST -->
+                        <form action="{{ url_for('posts.delete_post', id=post.id) }}" method="POST" style="display: inline;" onsubmit="return confirm('¿Seguro que deseas eliminar este post?');">
+                            <button type="submit" class="button is-small is-danger is-outlined">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
