@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Blog de Noticias{% endblock %}
+
+{% block content %}
+<div class="columns">
+    <div class="column is-offset-3 is-6">
+        <br><br>
+        {% for categoria in categories %}
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">{{ categoria.name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

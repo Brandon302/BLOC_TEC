@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Noticias</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: #eaf1f8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1;
+        }
+        .card {
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+        .card-footer {
+            background: transparent;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <section class="py-5">
+            <div class="container text-center">
+                <h1 class="display-4 mb-3">Blog de Noticias</h1>
+                <h2 class="lead fs-3 mb-5">Lo más reciente en México</h2>
+
+                <div class="card shadow-sm mb-5">
+                    <div class="card-body text-start">
+                        <h3 class="card-title h5">Panel principal</h3>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center g-4">
+                    <!-- Administrar Noticias -->
+                    <div class="col-md-5">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="card-title h5">
+                                    <i class="fas fa-newspaper me-2"></i>
+                                    <strong>Administrar Noticias</strong>
+                                </p>
+                                <p class="card-text">Crear, modificar, eliminar</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ url_for('posts.listar_posts') }}" class="btn btn-outline-primary w-100">
+                                    Acceder <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Administrar Categorías -->
+                    <div class="col-md-5">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="card-title h5">
+                                    <i class="fas fa-tags me-2"></i>
+                                    <strong>Administrar Categorías</strong>
+                                </p>
+                                <p class="card-text">Crear, modificar, eliminar</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ url_for('categories.listar_categories') }}" class="btn btn-outline-primary w-100">
+                                    Acceder <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
