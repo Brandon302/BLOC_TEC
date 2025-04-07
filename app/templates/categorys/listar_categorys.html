@@ -4,6 +4,12 @@
 {% block content %}
 <div class="columns">
     <div class="column is-offset-3 is-6">
+        <div class="is-flex is-justify-content-space-between is-align-items-center" style="margin-top: 2rem;">
+            <a class="button is-light" href="{{ url_for('index') }}">
+                <i class="fa-solid fa-arrow-left"></i> &nbsp; Regresar al inicio
+            </a>
+        </div>
+
         <br><br>
         {% for categoria in categories %}
         <div class="card">
