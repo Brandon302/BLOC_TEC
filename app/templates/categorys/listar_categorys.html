@@ -8,6 +8,9 @@
             <a class="button is-light" href="{{ url_for('index') }}">
                 <i class="fa-solid fa-arrow-left"></i> &nbsp; Regresar al inicio
             </a>
+            <a class="button is-primary" href="{{ url_for('category.add_category') }}">
+                <i class="fa-solid fa-plus"></i> &nbsp; Nueva Categoría
+            </a>
         </div>
 
         <br><br>
@@ -19,10 +22,20 @@
                         <p class="title is-4">{{ categoria.name }}</p>
                     </div>
                 </div>
+                <div class="content is-flex is-justify-content-flex-end">
+                    <a class="button is-small is-warning" href="{{ url_for('category.update_category', id=categoria.id) }}">
+                        <i class="fa-solid fa-pen"></i> &nbsp; Editar
+                    </a>
+                    <form action="{{ url_for('category.delete_category', id=categoria.id) }}" method="post" style="margin-left: 0.5rem;">
+                        <button class="button is-small is-danger" type="submit" onclick="return confirm('¿Estás seguro de eliminar esta categoría?')">
+                            <i class="fa-solid fa-trash"></i> &nbsp; Eliminar
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
         {% endfor %}
-
     </div>
 </div>
 {% endblock %}
+
