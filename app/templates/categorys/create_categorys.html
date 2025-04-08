@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Agregar Categoría{% endblock %}
+{% block content %}
+<div class="columns">
+    <div class="column is-offset-3 is-6">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">Agregar Categoría</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <form action="{{ url_for('category.add_category') }}" method="post">
+                        <div class="field">
+                            <label class="label">Nombre:</label>
+                            <div class="control">
+                                <input class="input" type="text" name="name" required>
+                            </div>
+                        </div>
+                        <button class="button is-success" type="submit">Agregar</button>
+                        <a class="button is-danger" href="{{ url_for('category.listar_categorys') }}">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
